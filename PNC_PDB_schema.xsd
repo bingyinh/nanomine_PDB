@@ -476,7 +476,7 @@
     </xsd:complexType>
     <xsd:complexType name="DataSourceType">
         <xsd:sequence>
-            <xsd:element name="Citation" type="CitationType" minOccurs="0">
+            <xsd:element name="Citation" type="CitationDetailType" minOccurs="0">
                 <xsd:annotation>
                     <xsd:documentation>Published data source</xsd:documentation>
                 </xsd:annotation>
@@ -517,20 +517,6 @@
             <xsd:element minOccurs="0" name="ISBN" type="xsd:string">
                 <xsd:annotation>
                     <xsd:documentation>The International Standard Book Number</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-        </xsd:sequence>
-    </xsd:complexType>
-    <xsd:complexType name="CitationJournalType">
-        <xsd:sequence>
-            <xsd:element minOccurs="0" name="ISSN" type="xsd:string">
-                <xsd:annotation>
-                    <xsd:documentation>The International Standard Subscription Number</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element minOccurs="0" name="Issue" type="xsd:string">
-                <xsd:annotation>
-                    <xsd:documentation>Issue number, usually indicates month</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
         </xsd:sequence>
@@ -584,9 +570,19 @@
                     <xsd:documentation>Volume number</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
+            <xsd:element minOccurs="0" name="Issue" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Issue number, usually indicates month</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
             <xsd:element minOccurs="0" name="URL" type="xsd:string">
                 <xsd:annotation>
                     <xsd:documentation>URL to the publication</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ISSN" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>The International Standard Subscription Number</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
             <xsd:element minOccurs="0" name="Language" type="xsd:string">
@@ -603,26 +599,6 @@
             <xsd:element minOccurs="0" name="DateOfCitation" type="xsd:string">
                 <xsd:annotation>
                     <xsd:documentation>Date of data entry</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-        </xsd:sequence>
-    </xsd:complexType>
-    <xsd:complexType name="CitationTypeType">
-        <xsd:choice>
-            <xsd:element name="Book" type="CitationBookType"/>
-            <xsd:element name="Journal" type="CitationJournalType"/>
-        </xsd:choice>
-    </xsd:complexType>
-    <xsd:complexType name="CitationType">
-        <xsd:sequence>
-            <xsd:element minOccurs="0" name="CommonFields" type="CitationDetailType">
-                <xsd:annotation>
-                    <xsd:documentation>Common attributes for a material sample from published data source</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element minOccurs="0" name="CitationType" type="CitationTypeType">
-                <xsd:annotation>
-                    <xsd:documentation>Attributes specific to book chapter or journal publication</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
         </xsd:sequence>
