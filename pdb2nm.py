@@ -5,6 +5,7 @@ from lxml import etree as ET
 import dicttoxml
 import os
 from xml_update_validator import runValidation
+from doiquery import runDOIquery
 
 
 csvFile = "PDB_match_conditions.csv"
@@ -88,7 +89,10 @@ with open(csvFile, 'r') as f:
         # DATA_SOURCE
         DS = []
         if doi != '':
-            pass # run doi crawler here
+            metadict = runDOIquery(doi.strip())
+            for field in metadict:
+                for ele in metadict[field]:
+                    DS.append({field:ele})
         else:
             if journal != '':
                 DS.append({'Publication':journal})
@@ -105,10 +109,7 @@ with open(csvFile, 'r') as f:
             DATA.append({
                          'DATA_SOURCE':
                             {
-                             'Citation':
-                                {
-                                 'CommonFields':DS
-                                }
+                             'Citation':DS
                             }
                         })
         # MATERIALS
