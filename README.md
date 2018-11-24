@@ -21,6 +21,7 @@ In your ubuntu terminal, type
   git clone git@github.com:YOUR_USERNAME/nanomine_PDB.git
   ```
 #download xml2neo module at https://github.com/moxious/xml2neo/archive/master.zip
+
 #unzip the file to ~/applications/xml2neo-master and convert xmls to cypher queries
   ```
   cd ~/applications
