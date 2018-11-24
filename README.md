@@ -15,6 +15,7 @@ In your ubuntu terminal, type
   ~/applications/neo4j/bin/neo4j start
   ```
   then your neo4j webapp should be running at http://localhost:7474, ask me for the userid and the password.
+
 #download your fork of the nanomine_PDB to applications
   ```
   cd ~/applications
